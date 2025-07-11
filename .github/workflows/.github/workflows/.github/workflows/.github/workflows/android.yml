@@ -1,0 +1,48 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const generateBtn = document.getElementById('generate-btn');
+    const copyBtn = document.getElementById('copy-btn');
+    const promptOutput = document.getElementById('prompt-output');
+    
+    generateBtn.addEventListener('click', generatePrompt);
+    copyBtn.addEventListener('click', copyPrompt);
+    
+    function generatePrompt() {
+        const style = document.getElementById('style').value;
+        const subject = document.getElementById('subject').value.trim();
+        const action = document.getElementById('action').value.trim();
+        const mood = document.getElementById('mood').value;
+        
+        if (!subject) {
+            alert('Please enter a subject');
+            return;
+        }
+        
+        const promptParts = [
+            `A ${style} style video`,
+            `of ${subject}`,
+            action ? `while ${action}` : '',
+            `with a ${mood} mood`,
+            `--ar 16:9 --veo 3`
+        ];
+        
+        const fullPrompt = promptParts.filter(part => part).join(', ');
+        promptOutput.value = fullPrompt;
+    }
+    
+    function copyPrompt() {
+        if (!promptOutput.value) {
+            alert('No prompt to copy');
+            return;
+        }
+        
+        promptOutput.select();
+        document.execCommand('copy');
+        
+        // Visual feedback
+        const originalText = copyBtn.textContent;
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => {
+            copyBtn.textContent = originalText;
+        }, 2000);
+    }
+});
