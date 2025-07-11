@@ -1,0 +1,11 @@
+veo3-prompt-generator/
+├── index.html
+├── styles/
+│   └── style.css
+├── scripts/
+│   └── app.js
+├── assets/
+│   ├── images/
+│   └── icons/
+├── README.md
+└── LICENSE
