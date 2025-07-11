@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEO3 Prompt Generator</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>VEO3 Prompt Generator</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="style">Style:</label>
+                <select id="style">
+                    <option value="cinematic">Cinematic</option>
+                    <option value="documentary">Documentary</option>
+                    <option value="animation">Animation</option>
+                    <option value="vintage">Vintage</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" placeholder="e.g., astronaut, cityscape, forest">
+            </div>
+            
+            <div class="control-group">
+                <label for="action">Action:</label>
+                <input type="text" id="action" placeholder="e.g., dancing, flying, exploring">
+            </div>
+            
+            <div class="control-group">
+                <label for="mood">Mood:</label>
+                <select id="mood">
+                    <option value="epic">Epic</option>
+                    <option value="dreamy">Dreamy</option>
+                    <option value="dark">Dark</option>
+                    <option value="bright">Bright</option>
+                </select>
+            </div>
+            
+            <button id="generate-btn">Generate Prompt</button>
+        </div>
+        
+        <div class="result">
+            <h2>Your VEO3 Prompt:</h2>
+            <textarea id="prompt-output" readonly></textarea>
+            <button id="copy-btn">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
